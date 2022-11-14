@@ -1,0 +1,79 @@
+@use "./scss/colors";
+@use "./scss/mixins/fluidIt";
+
+.app {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+
+  .container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-top: 142px;
+    align-items: center;
+    text-transform: uppercase;
+    text-align: center;
+
+    .background-stars {
+      height: 100%;
+      top: 0;
+      width: 100%;
+      position: absolute;
+
+      img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    h1 {
+      color: white;
+      width: 327px;
+      @include fluidIt.fluidIt(font-size, 18px, 22px);
+      line-height: 24px;
+      letter-spacing: 6.13636px;
+      font-style: normal;
+
+      @media (min-width: 1200px) {
+        width: 100%;
+      }
+    }
+  }
+  footer {
+    width: 100%;
+    height: 168px;
+    background-position: -715px 0px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("./images/pattern-hills.svg");
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (min-width: 425px) {
+      background-position: initial;
+    }
+
+    @media (min-width: 1200px) {
+      height: 266px;
+    }
+
+    ul {
+      list-style: none;
+      margin-top: 100px;
+      display: flex;
+      gap: 32px;
+
+      svg {
+        &:hover {
+          cursor: pointer;
+          fill: #da4567;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+@use "../../scss/mixins/fluidIt";
+
+.countdown-timer-item {
+  position: relative;
+
+  .number {
+    font-size: 36px;
+    line-height: 71px;
+    letter-spacing: -1.08px;
+    color: #fb5e84;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, 0);
+
+    @media (min-width: 1440px) {
+      font-size: 80px;
+      transform: translate(-50%, 50%);
+    }
+  }
+
+  .type {
+    @include fluidIt.fluidIt(font-size, 7px, 14px);
+    line-height: 9px;
+    text-align: center;
+    letter-spacing: 2.95937px;
+    color: #8385a9;
+    text-transform: uppercase;
+  }
+}
